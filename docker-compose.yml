@@ -9,7 +9,7 @@ services:
             -
     p5-owls:
         envionment:
-            - SERVICE_NAME=${P5-OWLS-SERVICE-NAME}
+            - SERVICE_NAME=${P5_OWLS_SERVICE_NAME}
         image: sammoorhouse/p5-owls
         ports:
             - "127.0.0.1:%{P5-OWLS-SERVICE-PORT}:80"
