@@ -15,4 +15,4 @@ services:
             - "127.0.0.1:3001:3000"
     linode-3318998:
         image: sammoorhouse/linode-3318998
-        network-mode: "host"
+        network_mode: "host"
