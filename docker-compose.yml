@@ -12,6 +12,3 @@ services:
     linode-3318998:
         image: sammoorhouse/linode-3318998
         network_mode: "host"
-        links:
-            - p5-owls:docker-p5-owls
-            - grafana:docker-grafana
