@@ -20,8 +20,6 @@ services:
     linode-3318998:
         image: sammoorhouse/linode-3318998
         network_mode: "host"
-        links:
-            -
         environment:
             - P5-OWLS-SERVICE-NAME={P5-OWLS-SERVICE-NAME}
             - P5-OWLS-SERVICE-PORT={P5-OWLS-SERVICE-PORT}
