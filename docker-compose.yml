@@ -14,5 +14,5 @@ services:
         ports:
             - "80:80"
         links:
-            - p5-owls
-            - grafana
+            - p5-owls:p5-owls
+            - grafana:grafana
