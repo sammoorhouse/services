@@ -6,7 +6,7 @@ services:
             - "1883:1883"
             - "9001:9001"
     p5-owls:
-        envionment:
+        environment:
             - SERVICE_NAME=${P5_OWLS_SERVICE_NAME}
         image: sammoorhouse/p5-owls
         ports:
