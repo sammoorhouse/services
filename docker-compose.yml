@@ -11,4 +11,8 @@ services:
         image: grafana/grafana
     linode-3318998:
         image: sammoorhouse/linode-3318998
-        network_mode: "host"
+        ports:
+            - "80:80"
+        links:
+            - p5-owls:docker-p5-owls
+            - grafana:docker-p5-grafana
