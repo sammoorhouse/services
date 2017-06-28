@@ -11,8 +11,4 @@ services:
         image: grafana/grafana
     linode-3318998:
         image: sammoorhouse/linode-3318998
-        ports:
-            - "80:80"
-        links:
-            - p5-owls:p5-owls
-            - grafana:grafana
+        network_mode: "host" 
