@@ -10,18 +10,18 @@ services:
             - SERVICE_NAME=${P5_OWLS_SERVICE_NAME}
         image: sammoorhouse/p5-owls
         ports:
-            - "127.0.0.1:%{P5_OWLS_SERVICE_PORT}:80"
+            - "127.0.0.1:${P5_OWLS_SERVICE_PORT}:80"
     grafana:
         environment:
             - SERVICE_NAME=${GRAFANA_SERVICE_NAME}
         image: grafana/grafana
         ports:
-            - "127.0.0.1:%{GRAFANA_SERVICE_PORT}:3000"
+            - "127.0.0.1:${GRAFANA_SERVICE_PORT}:3000"
     linode-3318998:
         image: sammoorhouse/linode-3318998
         network_mode: "host"
         environment:
-            - P5-OWLS_SERVICE-PORT={P5_OWLS_SERVICE_PORT}
-            - P5-OWLS_SERVICE-NAME={P5_OWLS_SERVICE_NAME}
-            - GRAFANA_SERVICE-NAME={GRAFANA_SERVICE_NAME}
-            - GRAFANA_SERVICE_PORT={GRAFANA_SERVICE_PORT}
+            - P5-OWLS_SERVICE-PORT=${P5_OWLS_SERVICE_PORT}
+            - P5-OWLS_SERVICE-NAME=${P5_OWLS_SERVICE_NAME}
+            - GRAFANA_SERVICE-NAME=${GRAFANA_SERVICE_NAME}
+            - GRAFANA_SERVICE_PORT=${GRAFANA_SERVICE_PORT}
