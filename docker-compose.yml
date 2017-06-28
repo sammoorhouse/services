@@ -14,5 +14,5 @@ services:
         ports:
             - "80:80"
         links:
-            - p5-owls:docker-p5-owls
-            - grafana:docker-p5-grafana
+            - p5-owls
+            - grafana
