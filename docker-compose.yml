@@ -5,10 +5,16 @@ services:
         ports:
             - "1883:1883"
             - "9001:9001"
+        volumes:
+            - "${HOST_DATA_VOLUME"/mosquitto:/mosquitto/data"
     p5-owls:
         image: sammoorhouse/p5-owls
     grafana:
         image: grafana/grafana
+        environment:
+            - GF_PATHS_DATA=/data
+        volumes:
+            "${HOST_DATA_VOLUME}/grafana:/data"
         depends_on:
             - mosquitto
     busybox:
@@ -22,7 +28,7 @@ services:
         image: portainer/portainer
         volumes:
             - "/var/run/docker.sock:/var/run/docker.sock"
-            - "/var/data/portainer:/data"
+            - "${HOST_DATA_VOLUME}/portainer:/data"
     linode-3318998:
         image: sammoorhouse/linode-3318998
         ports:
