@@ -7,12 +7,12 @@ services:
             - "9001:9001"
     p5-owls:
         image: sammoorhouse/p5-owls
-        ports:
-            - "127.0.0.1:3000:80"
     grafana:
         image: grafana/grafana
-        ports:
-            - "127.0.0.1:3001:3000"
+        depends-on: mosquitto
+    busybox:
+        image: busybox
+        links:
+            - grafana
     linode-3318998:
         image: sammoorhouse/linode-3318998
-        network_mode: "host" 
