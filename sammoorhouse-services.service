@@ -1,0 +1,13 @@
+[Unit]
+Description=Services for github.com/sammoorhouse
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+ExecStartPre=-/opt/bin/docker-compose -f /home/core/dev/sammoorhouse/services/docker-compose.yml down 
+ExecStart=/opt/bin/docker-compose -f /home/core/dev/sammoorhouse/services/docker-compose.yml up -d
+ExecStop=/opt/bin/docker-compose -f /home/core/dev/sammoorhouse/services/docker-compose.yml stop 
+
+[Install]
+WantedBy=multi-user.target
