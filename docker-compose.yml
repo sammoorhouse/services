@@ -14,7 +14,7 @@ services:
     busybox:
         image: busybox
         links:
-            - grafana
+            - grafana:grafana
         stdin_open: true
         tty: true
     linode-3318998:
