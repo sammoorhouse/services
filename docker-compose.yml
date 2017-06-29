@@ -9,7 +9,7 @@ services:
         image: sammoorhouse/p5-owls
     grafana:
         image: grafana/grafana
-        depends-on: mosquitto
+        depends_on: mosquitto
     busybox:
         image: busybox
         links:
