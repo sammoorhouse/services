@@ -14,8 +14,12 @@ services:
     busybox:
         image: busybox
         links:
+            - p5-owls:p5-owls
             - grafana:grafana
         stdin_open: true
         tty: true
     linode-3318998:
         image: sammoorhouse/linode-3318998
+        links:
+            - p5-owls:p5-owls
+            - grafana:grafana
