@@ -42,10 +42,3 @@ services:
         links:
             - p5-owls:p5-owls
             - grafana:grafana
-
-
-
-1+0000 lvl=info msg="Path Home" logger=settings path=/usr/share/grafana
-t=2017-06-29T16:02:31+0000 lvl=info msg="Path Data" logger=settings path=/data
-t=2017-06-29T16:02:31+0000 lvl=info msg="Path Logs" logger=settings path=/var/log/grafana
-t=2017-06-29T16:02:31+0000 lvl=info msg="Path Plugins" logger=settings path=/var/lib/grafana/plugins
