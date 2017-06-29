@@ -15,5 +15,7 @@ services:
         image: busybox
         links:
             - grafana
+        stdin_open: true
+        tty: true
     linode-3318998:
         image: sammoorhouse/linode-3318998
