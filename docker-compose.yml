@@ -18,6 +18,11 @@ services:
             - grafana:grafana
         stdin_open: true
         tty: true
+    portainer:
+        image: portainer/portainer
+        volumes:
+            - "/var/run/docker.sock:/var/run/docker.sock"
+            - "/var/data/portainer:/data"
     linode-3318998:
         image: sammoorhouse/linode-3318998
         ports:
@@ -25,3 +30,4 @@ services:
         links:
             - p5-owls:p5-owls
             - grafana:grafana
+docker run -d -p 9000:9000 
