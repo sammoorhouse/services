@@ -13,8 +13,9 @@ services:
         image: grafana/grafana
         environment:
             - GF_PATHS_DATA=/data
+            - GF_PATHS_HOME=
         volumes:
-            - "${HOST_DATA_VOLUME}/grafana:/data"
+            #- "${HOST_DATA_VOLUME}/grafana:/data"
         depends_on:
             - mosquitto
     busybox:
@@ -36,3 +37,4 @@ services:
         links:
             - p5-owls:p5-owls
             - grafana:grafana
+            
