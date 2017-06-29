@@ -17,10 +17,10 @@ services:
             - GF_PATHS_LOGS=/var/log/grafana
             - GF_PATHS_PLUGINS=/var/lib/grafana/plugins
         volumes:
-            - "${HOST_HOME_VOLUME}/grafana:/data/home"
-            - "${HOST_DATA_VOLUME}/grafana:/data"
-            - "${HOST_LOGS_VOLUME}/grafana:/var/log/grafana"
-            - "${HOST_PLUGINS_VOLUME}/grafana:/var/lib/grafana/plugins"
+            - "${HOST_HOME_VOLUME}/${GRAFANA_APP_NAME}:/data/home"
+            - "${HOST_DATA_VOLUME}/${GRAFANA_APP_NAME}:/data"
+            - "${HOST_LOGS_VOLUME}/${GRAFANA_APP_NAME}:/var/log/grafana"
+            - "${HOST_PLUGINS_VOLUME}/${GRAFANA_APP_NAME}:/var/lib/grafana/plugins"
         depends_on:
             - mosquitto
     busybox:
@@ -34,7 +34,7 @@ services:
         image: portainer/portainer
         volumes:
             - "/var/run/docker.sock:/var/run/docker.sock"
-            - "${HOST_DATA_VOLUME}/portainer:/data"
+            - "${HOST_DATA_VOLUME}/${PORTAINER_APP_NAME}:/data"
     linode-3318998:
         image: sammoorhouse/linode-3318998
         ports:
