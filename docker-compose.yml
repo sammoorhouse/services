@@ -14,7 +14,7 @@ services:
         environment:
             - GF_PATHS_DATA=/data
         volumes:
-            "${HOST_DATA_VOLUME}/grafana:/data"
+            - "${HOST_DATA_VOLUME}/grafana:/data"
         depends_on:
             - mosquitto
     busybox:
