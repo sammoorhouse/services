@@ -38,7 +38,7 @@ services:
     redis:
         image: redis
         volumes:
-            - "${HOST_DATA_VOLUME/${REDIS_APP_NAME}:/data"
+            - "${HOST_DATA_VOLUME}/${REDIS_APP_NAME}:/data"
         command: "redis-server --appendonly yes"
     quotidien:
         image: sammoorhouse/quotidien
