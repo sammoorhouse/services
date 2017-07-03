@@ -35,6 +35,18 @@ services:
         volumes:
             - "/var/run/docker.sock:/var/run/docker.sock"
             - "${HOST_DATA_VOLUME}/${PORTAINER_APP_NAME}:/data"
+    redis:
+        image: redis
+        volumes:
+            - "${HOST_DATA_VOLUME/${REDIS_APP_NAME}:/data"
+        command: "redis-server --appendonly yes"
+    quotidien:
+        image: sammoorhouse/quotidien
+        links:
+                - redis:redis
+        environment:
+                - REDIS_HOST=${REDIS_APP_NAME}
+                - REDIS_PORT=6379
     linode-3318998:
         image: sammoorhouse/linode-3318998
         ports:
