@@ -40,6 +40,13 @@ services:
         volumes:
             - "${HOST_DATA_VOLUME}/${REDIS_APP_NAME}:/data"
         command: "redis-server --appendonly yes"
+    redis-cli:
+        image: redis
+        command: "redis redis-cli -h ${REDIS_APP_NAME} -p 6379"
+        links:
+                - redis:redis
+        stdin_open: true
+        tty: true
     quotidien:
         image: sammoorhouse/quotidien
         links:
