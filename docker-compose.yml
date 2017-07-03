@@ -29,7 +29,7 @@ services:
             - p5-owls:p5-owls
             - grafana:grafana
             - redis:redis
-            -redis_cli:redis_cli
+            - redis-cli:redis-cli
         stdin_open: true
         tty: true
     portainer:
@@ -42,7 +42,7 @@ services:
         volumes:
             - "${HOST_DATA_VOLUME}/${REDIS_APP_NAME}:/data"
         command: "redis-server --appendonly yes"
-    redis_cli:
+    redis-cli:
         image: redis
         command: "redis-cli -h ${REDIS_APP_NAME}"
         links:
