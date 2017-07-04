@@ -25,11 +25,6 @@ services:
             - mosquitto
     busybox:
         image: busybox
-        links:
-            - p5-owls:p5-owls
-            - grafana:grafana
-            - redis:redis
-            - redis-cli:redis-cli
         stdin_open: true
         tty: true
     portainer:
@@ -46,15 +41,13 @@ services:
     redis-cli:
         image: redis
         command: "redis-cli -h ${REDIS_APP_NAME}"
-        links:
-                - redis:redis
-        stdin_open: true
-        tty: true
+        depends_on:
+                - redis
     quotidien:
         image: sammoorhouse/quotidien
         stdin_open: true
-        links:
-                - redis:redis
+        depends_on:
+                - redis
         environment:
                 - REDIS_HOST=${REDIS_APP_NAME}
                 - REDIS_PORT=6379
@@ -62,7 +55,3 @@ services:
         image: sammoorhouse/linode-3318998
         ports:
             - "80:80"
-        links:
-            - p5-owls:p5-owls
-            - grafana:grafana
-            - quotidien:quotidien
