@@ -41,6 +41,7 @@ services:
         image: redis
         volumes:
             - "${HOST_DATA_VOLUME}/${REDIS_APP_NAME}:/data"
+            - "${HOST_LOGS_VOLUME}/${REDIS_APP_NAME}:/var/log/redis"
         command: "redis-server --appendonly yes"
     redis-cli:
         image: redis
