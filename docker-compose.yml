@@ -9,6 +9,8 @@ services:
             - "${HOST_DATA_VOLUME}/${MOSQUITTO_APP_NAME}:/mosquitto/data"
     p5-owls:
         image: sammoorhouse/p5-owls
+    woodchip:
+        image: sammoorhouse/woodchip
     grafana:
         image: grafana/grafana
         environment:
