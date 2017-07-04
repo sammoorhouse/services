@@ -41,6 +41,7 @@ services:
         image: redis
         volumes:
             - "${HOST_DATA_VOLUME}/${REDIS_APP_NAME}:/data"
+            - "${HOST_LOG_VOLUME}/${REDIS_APP_NAME}:/var/log/messages" 
         command: "redis-server --appendonly yes"
     redis-cli:
         image: redis
@@ -52,7 +53,6 @@ services:
     quotidien:
         image: sammoorhouse/quotidien
         stdin_open: true
-        tty: true
         links:
                 - redis:redis
         environment:
