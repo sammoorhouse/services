@@ -65,3 +65,4 @@ services:
         links:
             - p5-owls:p5-owls
             - grafana:grafana
+            - quotidien:quotidien
