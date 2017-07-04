@@ -55,5 +55,10 @@ services:
                 - REDIS_PORT=6379
     linode-3318998:
         image: sammoorhouse/linode-3318998
+        depends_on:
+            - quotidien
+            - p5-owls
+            - woodchip
+
         ports:
             - "80:80"
