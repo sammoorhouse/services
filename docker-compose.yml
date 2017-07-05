@@ -11,6 +11,8 @@ services:
         image: sammoorhouse/p5-owls
     woodchip:
         image: sammoorhouse/woodchip
+    bollocks:
+        image: sammoorhouse/bollocks
     grafana:
         image: grafana/grafana
         environment:
