@@ -61,6 +61,7 @@ services:
             - quotidien
             - p5-owls
             - woodchip
+            - bollocks
 
         ports:
             - "80:80"
