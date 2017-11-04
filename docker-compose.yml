@@ -10,7 +10,7 @@ services:
     p5-owls:
         image: sammoorhouse/p5-owls
     moorhouseassociates:
-        image: sammoorhouse/moorhouseassociates
+        image: sammoorhouse/moorhouseassociates.com
     woodchip:
         image: sammoorhouse/woodchip
     bollocks:
